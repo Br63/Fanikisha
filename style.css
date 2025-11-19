@@ -122,7 +122,6 @@ height: 365px;
 /* why section */
 .why{
   background:fff;
-  margin-top:28px;
   padding:60px 40px;
   position: relative;
 
@@ -411,22 +410,164 @@ height: 365px;
 
 }
 
-/* responsiveness for big screens ie desktop */
-@media (min-width: 1280px) {
+/* tablet responsive (1024px) */
+@media (max-width: 1024px) {
 
-  .wrap {
-    max-width: var(--container);
-  }
   .hero {
-    padding: 60px 40px;
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 40px 20px;
   }
-  .why {
-    padding: 80px 60px;
+
+  .hero-left {
+    align-items: center;
   }
-  .solutions-section {
-    padding: 80px 60px;
+
+  .logo {
+    margin-bottom: -20px;
+    left: 0;
   }
+
+  .hero-images {
+    width: 350px;
+    height: 300px;
+    left: 0;
+  }
+
+  .hero-images img {
+    width: 350px;
+    height: auto;
+  }
+
+  .hero-right h1 {
+    font-size: 34px;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+  .feature:not(:last-child)::after {
+    display: none;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    flex-direction: column;
+    height: auto;
+  }
+  .card-image,
+  .card-content {
+    width: 100%;
+    position: relative;
+  }
+  .card-image {
+    height: 220px;
+  }
+
   .benefit-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+/* mobile responsive (600px) */
+@media (max-width: 600px) {
+
+  .hero {
+    padding: 30px 16px;
+    gap: 20px;
+  }
+
+  .hero-left {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .logo {
+    width: 80px;
+    height: auto;
+  }
+
+  .hero-images {
+    width: 260px;
+    height: 240px;
+    padding: 10px;
+  }
+  .hero-images img {
+    width: 260px;
+  }
+
+  .hero-right h1 {
+    font-size: 28px;
+  }
+
+  .btn {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+
+  .why {
+    padding: 40px 18px;
+  }
+
+  .why-inner h2 {
+    font-size: 20px;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .solutions-section {
+    padding: 40px 18px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 380px;
+  }
+
+  .card h3 {
+    font-size: 28px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .benefits-inner {
+    padding: 80px 20px;
+    height: auto;
+  }
+
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit {
+    text-align: left;
+  }
+
+  .cta {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .cta p {
+    font-size: 26px;
   }
 }
