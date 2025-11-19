@@ -14,6 +14,7 @@
 html,body{
     height:100%
 }
+
 body{
   margin:0;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -23,21 +24,18 @@ body{
   background: #fff;
 }
 
-.wrap{
-  max-width:var(--container);
-  margin:20px auto;
-  padding:20px;
-}
 
 /* hero section */
 
 .hero{
   display:flex;
-  gap:40px;
+  height:460px;
+  gap:30px;
   align-items:center;
   background: linear-gradient(180deg, var(--red) 0%, #8c2623 100%);
   color:var(--cream);
   overflow:hidden;
+ 
 }
 /* left side: logo + hero image */
 
@@ -51,14 +49,16 @@ body{
   position:relative;
 }
 
-.logo{
 
-  width:112px;
-  height:91px;
-  left: 80px;
-  object-fit:contain;
-  margin-top:6px;
-  
+
+/* LOGO IMAGE */
+.logo{
+  width: 112px;
+  height: 91px;
+  margin-bottom: -60px;
+  left: 80px;       
+  object-fit: contain; 
+  display: block;
 }
 
 /* place hero image on the left block but keep responsive */
@@ -66,7 +66,7 @@ body{
   position: relative;
   width: 466px; 
   height: 400px;
-top: 20px;
+top: 15px;
 left: 60px;
   padding: 15px;
   border-radius: 90%;
@@ -93,7 +93,7 @@ height: 365px;
   max-width:700px;
 }
 .hero-right h1{
-  margin:0 0 18px 0;
+  /* margin:0 0 18px 0; */
   line-height:100%;
   font-weight:400;
   font-size: 42px;
@@ -225,6 +225,7 @@ height: 365px;
     color: #F4AB7A4D;
 }
 
+
 .solutions-inner {
     position: relative; 
     z-index: 2; 
@@ -308,7 +309,6 @@ height: 365px;
 /* benefits */
 .benefits{
 
-    margin:28px 0;
      overflow:hidden
     }
 .benefits-inner{
@@ -394,7 +394,6 @@ height: 365px;
 /* CTA footer */
 .cta
 {
-  margin-top:18px;
   background:var(--red);
   color:var(--cream);
   padding:22px 28px;
@@ -412,3 +411,22 @@ height: 365px;
 
 }
 
+/* responsiveness for big screens ie desktop */
+@media (min-width: 1280px) {
+
+  .wrap {
+    max-width: var(--container);
+  }
+  .hero {
+    padding: 60px 40px;
+  }
+  .why {
+    padding: 80px 60px;
+  }
+  .solutions-section {
+    padding: 80px 60px;
+  }
+  .benefit-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
