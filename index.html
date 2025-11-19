@@ -63,7 +63,8 @@
       <div class="solutions-inner">
         <h2>Our Solutions</h2>
         <p>Are you a woman looking to start or scale your business, 
-            grow your wealth, or secure your legacy? Fanikisha gives you tailored solutions at every stage of your journey.</p>
+            grow your wealth, or secure your legacy? 
+            Fanikisha gives you tailored solutions at every stage of your journey.</p>
 
         <div class="cards">
           <article class="card">
@@ -95,61 +96,147 @@
             <img src="Images/almasi.png" alt="Almasi" class="card-image" />
           </article>
 
-          <article class="card">
-            <div class="card-content">
-              <h3>Platini</h3>
-              <p>Premium package with tailored advisory and network introductions.</p>
-              <a class="small-btn" href="#">Learn More</a>
-            </div>
-            <img src="Images/platini.png" alt="Platini" class="card-image" />
-          </article>
-        </div>
+
+<article class="card">
+  <div class="card-content">
+    <h3>Platini</h3>
+    <p>Premium package with tailored advisory and network introductions.</p>
+    <a class="small-btn" id="openModal" href="#">Learn More</a>
+  </div>
+  <img src="Images/platini.png" alt="Platini" class="card-image" />
+</article>
+
+<!-- MODAL -->
+<div class="modal" id="dhahabuModal">
+  <div class="modal-box">
+    
+    <span class="modal-pill">For growing businesses (12–24 months, up to KShs 50M turnover)</span>
+
+    <h2>Dhahabu Benefits</h2>
+
+    <h3>Access tailored loans</h3>
+
+    <div class="loan-grid">
+      <div class="loan-item">
+        <div class="number">01</div>
+        <p>Business loans of up to KShs 10 million based on cash flows</p>
       </div>
-    </section>
 
-    <!-- benefite-->
-    <section class="benefits">
-      <div class="benefits-inner" style="background-image: url('Images/lady.jpg');">
-        <div class="benefits-overlay"></div>
-
-        <div class="benefits-content">
-          <h2>Member Benefits</h2>
-          <p>As a Fanikisha member, you get more than financing 
-            you gain access to a community of growth, mentorship, and opportunity.</p>
-
-          <div class="benefit-grid">
-            <div class="benefit">
-              <div class="icon"><img src="Images/affordable.svg" alt=""></div>
-              <p>Affordable health cover from KShs 5,800/year</p>
-            </div>
-
-            <div class="benefit">
-              <div class="icon"><img src="Images/equity.svg" alt=""></div>
-              <p>Equity Mobile App & Equitel access</p>
-            </div>
-
-            <div class="benefit">
-              <div class="icon"><img src="Images/paypal.svg" alt=""></div>
-              <p>PayPal withdrawals</p>
-            </div>
-
-            <div class="benefit">
-              <div class="icon"><img src="Images/till.svg" alt=""></div>
-              <p>One Equity Till Number for free payments</p>
-            </div>
-
-            <div class="benefit">
-              <div class="icon"><img src="Images/wallet.svg" alt=""></div>
-              <p>Premium cards (Visa, Mastercard, Amex)</p>
-            </div>
-
-            <div class="benefit">
-              <div class="icon"><img src="Images/ecommerce.svg" alt=""></div>
-              <p>E-commerce & trade opportunities</p>
-            </div>
-          </div>
-        </div>
+      <div class="loan-item">
+        <div class="number">02</div>
+        <p>Access up to 80% LPO financing to enable you grow your business</p>
       </div>
+
+      <div class="loan-item">
+        <div class="number">03</div>
+        <p>Instant mobile loans from as low as KShs 100 to KShs 3 million via your Equitel line, Equity Mobile App or *247#</p>
+      </div>
+
+      <div class="loan-item">
+        <div class="number">04</div>
+        <p>Unsecured ecosystem working capital solutions of up to KShs 10 million</p>
+      </div>
+    </div>
+
+    <h3>Additional Benefits</h3>
+
+    <ul class="benefits-list">
+      <li><strong>Health cover:</strong> Affordable health cover for you and your family from as low as KShs 5800 per year</li>
+
+      <li><strong>Premium card services:</strong> Get a Mastercard Platinum or Visa Gold card and enjoy travel and shopping benefits</li>
+
+      <li><strong>Credit card services:</strong> Get an Equity American Express credit card or Visa Gold credit card with a limit of up to KShs 1 million</li>
+
+      <li><strong>Mobile banking:</strong> 24-hour access to your account through Equitel line, *247#, or Equity Mobile App</li>
+
+      <li><strong>PayPal withdrawal services:</strong> Link your account with PayPal and withdraw PayPal funds into your Equity Account</li>
+
+      <li><strong>Receive payments:</strong> Receive payments for FREE through One Equity Till Number (M-PESA, Airtel, other banks, *247#, Equity Mobile App)</li>
+
+      <li><strong>Enroll for business or entrepreneurship training</strong></li>
+
+      <li><strong>Mentorship and networking opportunities</strong> with top performers in sectors like agriculture, health, education, and more</li>
+
+      <li><strong>Opportunity to graduate to the next level</strong></li>
+    </ul>
+
+    <button class="close-btn" id="closeModal">Close</button>
+
+  </div>
+</div>
+
+
+<!-- MODAL JS -->
+<script>
+  const modal = document.getElementById("dhahabuModal");
+  const open = document.getElementById("openModal");
+  const close = document.getElementById("closeModal");
+
+  open.onclick = (e) => {
+    e.preventDefault();
+    modal.classList.add("show");
+  };
+
+  close.onclick = () => modal.classList.remove("show");
+
+  modal.onclick = (e) => {
+    if (e.target === modal) modal.classList.remove("show");
+  };
+</script>
+
+
+<!--Modal 
+<div class="modal" id="infoModal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h2>Dhahabu Benefits</h2>
+    <p><strong>Access tailored loans</strong></p>
+    <ul>
+      <li>Business loans of up to KShs 10 million based on cash flows</li>
+      <li>Access up to 80% LPO financing to enable you grow your business</li>
+      <li>Instant mobile loans from as low as KShs 100 to KShs 3 million via your Equitel line, Equity Mobile App or *247#</li>
+      <li>Unsecured ecosystem working capital solutions of up to KShs 10 million</li>
+    </ul>
+
+    <h3>Additional Benefits</h3>
+    <ul>
+      <li>Affordable health cover starting from KShs 5800 per year</li>
+      <li>Premium card services: Mastercard Platinum or Visa Gold</li>
+      <li>Credit card services up to KShs 1 million limit</li>
+      <li>24‑hour mobile banking access</li>
+      <li>PayPal withdrawal services</li>
+      <li>Receive payments via One Equity Till Number</li>
+      <li>Business/entrepreneurship training</li>
+      <li>Mentorship and networking opportunities</li>
+      <li>Opportunity to graduate to the next level</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("infoModal");
+  const openBtn = document.getElementById("learnMoreBtn");
+  const closeBtn = document.getElementById("closeModal");
+
+  openBtn.onclick = function(e) {
+    e.preventDefault();
+    modal.style.display = "flex";
+  }
+
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+          
+    </div>
+    </div>-->
     </section>
 
     <!-- cta footer-->
@@ -157,6 +244,9 @@
       <p>Start Your Fanikisha Journey Today</p>
       <a class="btn" href="#">Sign up</a>
     </footer>
+
   </div>
 </body>
 </html>
+
+

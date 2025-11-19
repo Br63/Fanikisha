@@ -53,10 +53,12 @@ body{
 
 /* LOGO IMAGE */
 .logo{
+  top: 60px;
+  position: relative;
+  left: 10px;
   width: 112px;
   height: 91px;
-  margin-bottom: -60px;
-  left: 80px;       
+  margin-bottom: -60px;     
   object-fit: contain; 
   display: block;
 }
@@ -64,6 +66,8 @@ body{
 /* place hero image on the left block but keep responsive */
 .hero-images {
   position: relative;
+  display: flex;
+  justify-content: center;
   width: 466px; 
   height: 400px;
 top: 15px;
@@ -393,6 +397,7 @@ height: 365px;
 /* CTA footer */
 .cta
 {
+  margin-top:18px;
   background:var(--red);
   color:var(--cream);
   padding:22px 28px;
@@ -409,165 +414,81 @@ height: 365px;
   font: d-din;
 
 }
+/* modal css/*/
 
-/* tablet responsive (1024px) */
-@media (max-width: 1024px) {
-
-  .hero {
-    flex-direction: column;
-    height: auto;
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .hero-left {
-    align-items: center;
-  }
-
-  .logo {
-    margin-bottom: -20px;
-    left: 0;
-  }
-
-  .hero-images {
-    width: 350px;
-    height: 300px;
-    left: 0;
-  }
-
-  .hero-images img {
-    width: 350px;
-    height: auto;
-  }
-
-  .hero-right h1 {
-    font-size: 34px;
-  }
-
-  .features {
-    flex-direction: column;
-  }
-  .feature:not(:last-child)::after {
+  .modal {
+    position: fixed;
+    inset: 0;
     display: none;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    flex-direction: column;
-    height: auto;
-  }
-  .card-image,
-  .card-content {
-    width: 100%;
-    position: relative;
-  }
-  .card-image {
-    height: 220px;
-  }
-
-  .benefit-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .cta {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
-}
-
-/* mobile responsive (600px) */
-@media (max-width: 600px) {
-
-  .hero {
-    padding: 30px 16px;
-    gap: 20px;
-  }
-
-  .hero-left {
-    min-width: unset;
-    width: 100%;
-  }
-
-  .logo {
-    width: 80px;
-    height: auto;
-  }
-
-  .hero-images {
-    width: 260px;
-    height: 240px;
-    padding: 10px;
-  }
-  .hero-images img {
-    width: 260px;
-  }
-
-  .hero-right h1 {
-    font-size: 28px;
-  }
-
-  .btn {
-    padding: 10px 22px;
-    font-size: 14px;
-  }
-
-  .why {
-    padding: 40px 18px;
-  }
-
-  .why-inner h2 {
-    font-size: 20px;
-  }
-
-  .features {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .solutions-section {
-    padding: 40px 18px;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    min-height: 380px;
-  }
-
-  .card h3 {
-    font-size: 28px;
-  }
-
-  .card p {
-    font-size: 14px;
-  }
-
-  .benefits-inner {
-    padding: 80px 20px;
-    height: auto;
-  }
-
-  .benefit-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .benefit {
-    text-align: left;
-  }
-
-  .cta {
-    flex-direction: column;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
+    background: rgba(0,0,0,0.4);
+  }
+  .modal.show { display: flex; }
+
+  .modal-box {
+    background: #fff;
+    width: 100%;
+    max-width: 650px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    max-height: 90vh;
+    overflow-y: auto;
   }
 
-  .cta p {
-    font-size: 26px;
+  .modal-pill {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #ffe9d0;
+    color: #cc7a00;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
   }
-}
+
+  .loan-grid {
+    display: grid;
+    gap: 15px;
+    margin: 20px 0;
+  }
+
+  @media (min-width: 600px) {
+    .loan-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .loan-item {
+    padding: 10px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .number {
+    width: 35px;
+    height: 35px;
+    background: #ffcc9b;
+    color: #c56a00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: 600;
+  }
+
+  .benefits-list {
+    padding-left: 20px;
+  }
+
+  .benefits-list li { margin-bottom: 10px; }
+
+  .close-btn {
+    margin-top: 20px;
+    padding: 10px 16px;
+    background: #333;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+  }
