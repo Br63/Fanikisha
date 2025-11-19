@@ -7,7 +7,7 @@
   --accent: #F9A36A; 
   --text: #2b2b2b;
   --radius: 22px;
-  --container: 1300px;
+  --container: 1280px;
 }
 
 *{box-sizing:border-box}
@@ -37,11 +37,9 @@ body{
   align-items:center;
   background: linear-gradient(180deg, var(--red) 0%, #8c2623 100%);
   color:var(--cream);
-  padding:32px;
-  border-radius:12px;
   overflow:hidden;
 }
-
+/* left side: logo + hero image */
 
 .hero-left{
   flex:1;
@@ -54,57 +52,56 @@ body{
 }
 
 .logo{
-  
-  height:auto;
+
+  width:112px;
+  height:91px;
+  left: 80px;
   object-fit:contain;
-  margin-bottom:6px;
+  margin-top:6px;
+  
 }
 
-
+/* place hero image on the left block but keep responsive */
 .hero-images {
   position: relative;
-width: 466px;
-height:466px;
-top: 50px;
-left: 70px;
-  padding: 80px;
-  border-radius: 50%;
+  width: 466px; 
+  height: 400px;
+top: 20px;
+left: 60px;
+  padding: 15px;
+  border-radius: 90%;
   background: #9C1C14; /* Main red background */
   /* overflow: hidden; */
 }
 
 
 .circle{
-    position: relative;
+position: relative;
   width: 100%;
   z-index: 1;
 }
+
 .hero-images img{
-width: 513px;
-  height: 365px;
+width: 490px; 
+height: 365px;
   top: 11px;
-  left: -120px;
- 
-  
 }
 
-
+/* right side text */
 .hero-right{
   flex:1;
-  max-width:600px;
+  max-width:700px;
 }
 .hero-right h1{
   margin:0 0 18px 0;
-  font-size:36px;
   line-height:100%;
   font-weight:400;
   font-size: 42px;
-  font-weight: 400;
   font: d-din;
 
 }
 .hero-curve{
-  display:block;
+   display:block;
   margin:16px 0;
   max-width:220px;
 }
@@ -124,10 +121,27 @@ width: 513px;
 
 /* why section */
 .why{
-  background:#fff;
+  background:fff;
   margin-top:28px;
-  padding:28px;
-  border-radius:10px;
+  padding:60px 40px;
+  position: relative;
+
+}
+
+.why ::before{
+     content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 90%;
+    color: #F4AB7A4D;
+    background-image: url("Images/vector.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left top;
+    opacity: 0.12;
+    pointer-events: none;
 }
 
 .why-inner h2{
@@ -140,7 +154,7 @@ width: 513px;
 }
 .why-inner p{
   margin:0 0 20px;
-  color:#666;
+  color: black;
   max-width:900px;
 }
 
@@ -175,23 +189,59 @@ width: 513px;
   align-items:center;
   justify-content:center;
 }
-.feature-icon img{max-width:100%; height:auto; display:block}
-.feature h3{margin:8px 0 0; font-size:18px; color:var(--text); font-weight:600}
+.feature-icon img{
+  max-width:100%; 
+  height:auto; 
+  display:block;
+}
+.feature h3{
+  margin:8px 0 0; 
+  font-size:18px;
+   color:var(--text); 
+   font-weight:600
+  }
 
 /* solutions */
-.solutions{
-  background-color:#FDF6F1;
-  padding:40px 20px;
-  margin-top:28px;
-  border-radius:12px;
+.solutions-section {
+    position: relative;
+    padding: 60px 40px;
+    background-color: #f9f2eb; 
 }
+
+/* flower is right side */
+.solutions-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 45%;
+    background-image: url("Images/vector.png"); 
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right top;
+    pointer-events: none; 
+    z-index: 1;
+    color: #F4AB7A4D;
+}
+
+.solutions-inner {
+    position: relative; 
+    z-index: 2; 
+}
+
 .solutions-inner h2{
   margin:0 0 8px;
   font-size:30px;
   font-weight:600;
   color:var(--text);
+ 
 }
-.solutions-inner p{margin:0 0 20px; color:#666; max-width:900px}
+.solutions-inner p{
+  margin:0 0 20px; 
+  color:black;
+   max-width:900px
+  }
 
 /* cards grid */
 .cards{
@@ -218,11 +268,13 @@ width: 513px;
   width:50%;
   object-fit:cover;
 }
+
 .card-content{
   padding:28px;
   width:50%;
   z-index:2;
 }
+
 .card h3{
     margin:0 0 8px; 
     font-size:42px; 
@@ -254,22 +306,18 @@ width: 513px;
 }
 
 /* benefits */
-.benefits
-          {
+.benefits{
+
     margin:28px 0;
-     border-radius:12px; 
      overflow:hidden
     }
 .benefits-inner{
-
   position:relative;
   background-size:cover;
-  background-position:center;
-  padding:60px 30px;
+  padding:120px 60px;
   height:599px;
-  width: 1280px;
-
 }
+
 .benefits-overlay{
 
   position:absolute;
@@ -295,7 +343,7 @@ width: 513px;
     margin:0 0 20px; 
     color:rgba(255,255,255,0.9); 
     max-width:650px;
-     font-weight: 400;
+    font-weight: 400;
   font: d-din;
 ;
 }
@@ -307,14 +355,15 @@ width: 513px;
   gap:18px;
   margin-top:24px;
 }
+
 .benefit{
   display:flex;
   flex-direction:column;
-  align-items:center;
-  justify-content:center;
+  align-items:start;
+  justify-content:start;
   gap:12px;
   text-align:center;
-  padding:18px;
+  padding:15px;
   border-radius:12px;
   background: rgba(255,255,255,0.12);
   backdrop-filter: blur(20px);
@@ -349,7 +398,6 @@ width: 513px;
   background:var(--red);
   color:var(--cream);
   padding:22px 28px;
-  border-radius:12px;
   display:flex;
   align-items:center;
   justify-content:space-between;
