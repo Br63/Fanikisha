@@ -431,6 +431,7 @@ height: 365px;
   background: rgba(0,0,0,0);   /* invisible */
   pointer-events: none;        /* not clickable */
   transition: background 0.3s ease;
+  z-index: 9999;
 }
 
 /* When modal is open */
@@ -441,6 +442,8 @@ height: 365px;
 
 /* Slide-in panel */
 .modal-box {
+  position: relative;
+  z-index: 10000;
   width: 100%;
   max-width: 700px;
   height: 100vh;
