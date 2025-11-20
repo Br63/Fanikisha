@@ -72,7 +72,7 @@
               <h3>Shaba</h3>
               <p>Ideal for women seeking small, short-term loans to
                  grow their businesses and build credit.</p>
-              <a class="small-btn" href="#">Learn More</a>
+          <a class="small-btn openModal" href="#">Learn More</a>
             </div>
             <img src="Images/shaba.png" alt="Shaba" class="card-image" />
           </article>
@@ -82,7 +82,7 @@
               <h3>Dhahabu</h3>
               <p>Aimed for entrepreneurs looking for larger 
                 working capital and savings support.</p>
-              <a class="small-btn"  id="openModal"  href="#">Learn More</a>
+              <a class="small-btn openModal"  href="#">Learn More</a>
             </div>
             <img src="Images/dhahabu.png" alt="Dhahabu" class="card-image" />
           </article>
@@ -91,7 +91,7 @@
             <div class="card-content">
               <h3>Almasi</h3>
               <p>Structured loans and mentoring for established businesses seeking expansion.</p>
-              <a class="small-btn"  href="#">Learn More</a>
+              <a class="small-btn openModal" href="#">Learn More</a>
             </div>
             <img src="Images/almasi.png" alt="Almasi" class="card-image" />
           </article>
@@ -101,7 +101,7 @@
   <div class="card-content">
     <h3>Platini</h3>
     <p>Premium package with tailored advisory and network introductions.</p>
-    <a class="small-btn" href="#">Learn More</a>
+    <a class="small-btn openModal"  href="#">Learn More</a>
   </div>
   <img src="Images/platini.png" alt="Platini" class="card-image" />
 </article>
@@ -179,21 +179,26 @@
 <!-- javascript for the modal -->
 <script>
   const modal = document.getElementById("dhahabuModal");
-  const open = document.getElementById("openModal");
+  const openButtons = document.querySelectorAll(".openModal");
   const close = document.getElementById("closeModal");
 
-  open.onclick = (e) => {
-    e.preventDefault();
-    modal.classList.add("show");
-  };
+  // open modal from ANY button with class "openModal"
+  openButtons.forEach(btn => {
+    btn.onclick = (e) => {
+      e.preventDefault();
+      modal.classList.add("show");
+    };
+  });
 
+  // close button
   close.onclick = () => modal.classList.remove("show");
 
+  // close when clicking background
   modal.onclick = (e) => {
     if (e.target === modal) modal.classList.remove("show");
   };
 </script>
-      
+
     </div>
     </div>
     </section>
