@@ -51,7 +51,7 @@ body{
 
 
 
-/* LOGO IMAGE */
+/* logo image */
 .logo{
   top: 60px;
   position: relative;
@@ -63,7 +63,6 @@ body{
   display: block;
 }
 
-/* place hero image on the left block but keep responsive */
 .hero-images {
   position: relative;
   display: flex;
@@ -74,7 +73,7 @@ top: 15px;
 left: 60px;
   padding: 15px;
   border-radius: 90%;
-  background: #9C1C14; /* Main red background */
+  background: #9C1C14; 
   /* overflow: hidden; */
 }
 
@@ -169,12 +168,15 @@ height: 365px;
   align-items:center;
   justify-content:space-between;
 }
+
 .feature{
   flex:1;
   text-align:center;
   padding:16px 10px;
   position:relative;
 }
+/* divider */
+
 .feature:not(:last-child)::after{
   
   content:'';
@@ -185,6 +187,7 @@ height: 365px;
   width:1px;
   background:#eee;
 }
+
 .feature-icon{
   width:64px;
   height:64px;
@@ -418,35 +421,61 @@ height: 365px;
 
 }
 /* modal css/*/
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;               /* always flex */
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0;
+  background: rgba(0,0,0,0);   /* invisible */
+  pointer-events: none;        /* not clickable */
+  transition: background 0.3s ease;
+}
 
-  .modal {
-    position: fixed;
-    inset: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background: rgba(0,0,0,0.4);
+/* When modal is open */
+.modal.show {
+  background: rgba(0,0,0,0.4); /* fade-in background */
+  pointer-events: auto;
+}
+
+/* Slide-in panel */
+.modal-box {
+  width: 100%;
+  max-width: 700px;
+  height: 100vh;
+  background: #fff;
+  padding: 20px;
+  overflow-y: auto;
+  transform: translateX(100%);     /* start off screen */
+  transition: transform 0.4s ease; /* smooth animation */
+}
+
+/* Slide in */
+.modal.show .modal-box {
+  transform: translateX(0);
+}
+
+  .modal-box h2{
+     font-weight: 400;
+  font-size: 42px;
+  line-height: 100%;
   }
-  .modal.show { display: flex; }
 
-  .modal-box {
-    background: #fff;
-    width: 100%;
-    max-width: 650px;
-    padding: 20px 24px;
-    border-radius: 12px;
-    max-height: 90vh;
-    overflow-y: auto;
+  .modal-box h3{
+     font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
   }
 
   .modal-pill {
     display: inline-block;
     padding: 6px 12px;
     background: #ffe9d0;
-    color: #cc7a00;
+    color: #A32A29;
     border-radius: 20px;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 400;
     margin-bottom: 10px;
   }
 
@@ -463,34 +492,61 @@ height: 365px;
   }
 
   .loan-item {
-    padding: 10px 0;
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+  align-items: flex-start;
+  position: relative;
+ 
   }
 
+.loan-item p{
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
   .number {
-    width: 60px;
-    height: 40px;
-    background: #ffcc9b;
-    color: #c56a00;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-weight: 600;
+  width: 100px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ffcc9b;
+  color: #c56a00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
   }
 
   .benefits-list {
     padding-left: 20px;
+     
   }
 
-  .benefits-list li { margin-bottom: 10px; }
+  .benefits-list li {
+     margin-bottom: 10px; 
+      font-weight: 400;
+  font-size: 16px;
+    }
+
+/* vertical lines */
+.loan-item:nth-child(1),
+.loan-item:nth-child(3) {
+  border-right: 1px solid #e5e5e5;
+}
+
+/* horizontal lines */
+.loan-item:nth-child(1),
+.loan-item:nth-child(2) {
+  border-bottom: 1px solid #e5e5e5;
+}
+
 
   .close-btn {
     margin-top: 20px;
     padding: 10px 16px;
     background: #F4AB7A;
+    border-color: #F4AB7A;
     color: #fff;
     border-radius: 8px;
     cursor: pointer;
@@ -498,6 +554,7 @@ height: 365px;
 
 
 /* desktop */
+
 @media (min-width: 901px) {
   .hero {
     padding: 50px;
@@ -524,6 +581,7 @@ height: 365px;
 }
 
 /* tablet */
+
 @media (max-width: 900px) {
 
   .logo {

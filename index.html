@@ -72,7 +72,7 @@
               <h3>Shaba</h3>
               <p>Ideal for women seeking small, short-term loans to
                  grow their businesses and build credit.</p>
-              <a class="small-btn" href="#">Learn More</a>
+        <a class="small-btn" id="openModal" href="#">Learn More</a>
             </div>
             <img src="Images/shaba.png" alt="Shaba" class="card-image" />
           </article>
@@ -82,7 +82,7 @@
               <h3>Dhahabu</h3>
               <p>Aimed for entrepreneurs looking for larger 
                 working capital and savings support.</p>
-              <a class="small-btn" href="#">Learn More</a>
+              <a class="small-btn" id="openModal" href="#">Learn More</a>
             </div>
             <img src="Images/dhahabu.png" alt="Dhahabu" class="card-image" />
           </article>
@@ -91,7 +91,7 @@
             <div class="card-content">
               <h3>Almasi</h3>
               <p>Structured loans and mentoring for established businesses seeking expansion.</p>
-              <a class="small-btn" href="#">Learn More</a>
+               <a class="small-btn" id="openModal" href="#">Learn More</a>
             </div>
             <img src="Images/almasi.png" alt="Almasi" class="card-image" />
           </article>
@@ -129,7 +129,9 @@
 
       <div class="loan-item">
         <div class="number">03</div>
-        <p>Instant mobile loans from as low as KShs 100 to KShs 3 million via your Equitel line, Equity Mobile App or *247#</p>
+        <p>Instant mobile loans from as low as KShs 100 to KShs 3 million 
+          via your Equitel line,
+          Equity Mobile App or *247#</p>
       </div>
 
       <div class="loan-item">
@@ -141,21 +143,29 @@
     <h3>Additional Benefits</h3>
 
     <ul class="benefits-list">
-      <li><strong>Health cover:</strong> Affordable health cover for you and your family from as low as KShs 5800 per year</li>
+      <li><strong>Health cover:</strong> 
+        Affordable health cover for you and your family from as low as KShs 5800 per year</li>
 
-      <li><strong>Premium card services:</strong> Get a Mastercard Platinum or Visa Gold card and enjoy travel and shopping benefits</li>
+      <li><strong>Premium card services:</strong>
+         Get a Mastercard Platinum or Visa Gold card and enjoy travel and shopping benefits</li>
 
-      <li><strong>Credit card services:</strong> Get an Equity American Express credit card or Visa Gold credit card with a limit of up to KShs 1 million</li>
+      <li><strong>Credit card services:</strong> 
+        Get an Equity American Express credit card or Visa Gold credit card with a limit of up to KShs 1 million</li>
 
-      <li><strong>Mobile banking:</strong> 24-hour access to your account through Equitel line, *247#, or Equity Mobile App</li>
+      <li><strong>Mobile banking:</strong>
+         24-hour access to your account through Equitel line, *247#, or Equity Mobile App</li>
 
-      <li><strong>PayPal withdrawal services:</strong> Link your account with PayPal and withdraw PayPal funds into your Equity Account</li>
+      <li><strong>PayPal withdrawal services:</strong>
+         Link your account with PayPal and withdraw PayPal funds into your Equity Account</li>
 
-      <li><strong>Receive payments:</strong> Receive payments for FREE through One Equity Till Number (M-PESA, Airtel, other banks, *247#, Equity Mobile App)</li>
+      <li><strong>Receive payments:</strong> 
+        Receive payments for FREE through One Equity Till Number (M-PESA, Airtel, other banks, *247#, 
+        Equity Mobile App)</li>
 
       <li><strong>Enroll for business or entrepreneurship training</strong></li>
 
-      <li><strong>Mentorship and networking opportunities</strong> with top performers in sectors like agriculture, health, education, and more</li>
+      <li><strong>Mentorship and networking opportunities</strong> 
+        with top performers in sectors like agriculture, health, education, and more</li>
 
       <li><strong>Opportunity to graduate to the next level</strong></li>
     </ul>
@@ -166,7 +176,7 @@
 </div>
 
 
-<!-- MODAL JS -->
+<!-- javascript for the modal -->
 <script>
   const modal = document.getElementById("dhahabuModal");
   const open = document.getElementById("openModal");
@@ -183,63 +193,13 @@
     if (e.target === modal) modal.classList.remove("show");
   };
 </script>
-
-
-<!--Modal 
-<div class="modal" id="infoModal">
-  <div class="modal-content">
-    <span class="close-btn" id="closeModal">&times;</span>
-    <h2>Dhahabu Benefits</h2>
-    <p><strong>Access tailored loans</strong></p>
-    <ul>
-      <li>Business loans of up to KShs 10 million based on cash flows</li>
-      <li>Access up to 80% LPO financing to enable you grow your business</li>
-      <li>Instant mobile loans from as low as KShs 100 to KShs 3 million via your Equitel line, Equity Mobile App or *247#</li>
-      <li>Unsecured ecosystem working capital solutions of up to KShs 10 million</li>
-    </ul>
-
-    <h3>Additional Benefits</h3>
-    <ul>
-      <li>Affordable health cover starting from KShs 5800 per year</li>
-      <li>Premium card services: Mastercard Platinum or Visa Gold</li>
-      <li>Credit card services up to KShs 1 million limit</li>
-      <li>24‑hour mobile banking access</li>
-      <li>PayPal withdrawal services</li>
-      <li>Receive payments via One Equity Till Number</li>
-      <li>Business/entrepreneurship training</li>
-      <li>Mentorship and networking opportunities</li>
-      <li>Opportunity to graduate to the next level</li>
-    </ul>
-  </div>
-</div>
-
-<script>
-  const modal = document.getElementById("infoModal");
-  const openBtn = document.getElementById("learnMoreBtn");
-  const closeBtn = document.getElementById("closeModal");
-
-  openBtn.onclick = function(e) {
-    e.preventDefault();
-    modal.style.display = "flex";
-  }
-
-  closeBtn.onclick = function() {
-    modal.style.display = "none";
-  }
-
-  window.onclick = function(e) {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  }
-</script>
-
-          
+      
     </div>
-    </div>-->
+    </div>
     </section>
 
     <!-- cta footer-->
+
     <footer class="cta">
       <p>Start Your Fanikisha Journey Today</p>
       <a class="btn" href="#">Sign up</a>
