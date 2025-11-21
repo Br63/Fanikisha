@@ -334,25 +334,23 @@ document.addEventListener('DOMContentLoaded', () => {
         <h6>${escapeHtml(data.subtitle)}</h6>
 
         <div>
-          <div class="inlinepop">
-            ${data.items.slice(0,2).map(item => `
-              <div>
-                <img src="${escapeAttr(item.icon)}" alt="">
-                <p>${escapeHtml(item.text)}</p>
-              </div>
-            `).join('')}
-          </div>
+         <div class="inlinepop">
+  ${data.items.slice(0,2).map(item => `
+    <div>
+      <img src="${escapeAttr(item.icon)}" alt="">
+      <p>${escapeHtml(item.text)}</p>
+    </div>
+  `).join('')}
+</div>
 
-          <div class="another"></div>
-
-          <div class="inlinepop">
-            ${data.items.slice(2,4).map(item => `
-              <div>
-                <img src="${escapeAttr(item.icon)}" alt="">
-                <p>${escapeHtml(item.text)}</p>
-              </div>
-            `).join('')}
-          </div>
+<div class="inlinepop">
+  ${data.items.slice(2,4).map(item => `
+    <div>
+      <img src="${escapeAttr(item.icon)}" alt="">
+      <p>${escapeHtml(item.text)}</p>
+    </div>
+  `).join('')}
+</div>
         </div>
 
         <div>

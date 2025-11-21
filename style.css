@@ -843,14 +843,34 @@ height: 365px;
   background: #ddd;
   border-radius: 10px;
 }
-.number{
-  width: 100px;
-  height: 50px;
-  border-radius: 50%;
-  background: #ffcc9b;
-  color: #c56a00;
+
+.inlinepop {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  }
+  justify-content: space-between;
+  gap: 40px;
+  padding: 25px 0;
+  border-bottom: 1px solid #E5E5E5; /* Horizontal line */
+  position: relative;
+}
+
+.inlinepop > div {
+  width: 48%;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Vertical line between the two items */
+.inlinepop::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 50%;
+  width: 1px;
+  background: #E5E5E5;
+}
+
+.inlinepop:last-of-type {
+  border-bottom: none;
+}
