@@ -724,7 +724,6 @@ height: 365px;
     text-align: center;
   }
 }
-
 /* Overlay */
 .popup-overlay {
   position: fixed;
@@ -737,7 +736,7 @@ height: 365px;
   z-index: 900;
 }
 
-/*  Popup Panel*/
+/* Popup Panel */
 .popup-panel {
   position: fixed;
   top: 50%;
@@ -746,7 +745,7 @@ height: 365px;
   width: 860px;
   max-height: 90vh;
   overflow-y: auto;
-  background: #fff;
+  background: #FFFFFF;
   border-radius: 18px;
   padding: 35px 45px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
@@ -756,14 +755,13 @@ height: 365px;
   z-index: 1000;
 }
 
-/* When open */
 .popup-panel.open {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, -50%);
 }
 
-/* Close Button (X)*/
+/* Close Button */
 .popup-panel .close-btn {
   position: absolute;
   top: 18px;
@@ -798,58 +796,13 @@ height: 365px;
   font-weight: 400;
 }
 
-/* Loan Items Grid */
-.inlinepop {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px 40px;
-  margin-bottom: 25px;
-}
-
-.inlinepop div {
-  display: flex;
-  gap: 15px;
-  align-items: flex-start;
-}
-
-.inlinepop img {
-  width: 50px;
-}
-
-/* Additional Benefits  */
-.popup-panel p {
-  line-height: 1.4;
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-.btntwo {
-  margin-top: 25px;
-  padding: 12px 20px;
-  background: #F4AB7A;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  width: 100%;
-}
-
-/*Scrollbar inside popup */
-.popup-panel::-webkit-scrollbar {
-  width: 8px;
-}
-.popup-panel::-webkit-scrollbar-thumb {
-  background: #ddd;
-  border-radius: 10px;
-}
-
+/* Items Layout */
 .inlinepop {
   display: flex;
   justify-content: space-between;
   gap: 40px;
   padding: 25px 0;
-  border-bottom: 1px solid #E5E5E5; /* Horizontal line */
+  border-bottom: 1px solid #E5E5E5;
   position: relative;
 }
 
@@ -860,7 +813,7 @@ height: 365px;
   gap: 12px;
 }
 
-/* Vertical line between the two items */
+/* Vertical Divider */
 .inlinepop::after {
   content: "";
   position: absolute;
@@ -873,4 +826,281 @@ height: 365px;
 
 .inlinepop:last-of-type {
   border-bottom: none;
+}
+
+/* Additional Benefits */
+.popup-panel p {
+  line-height: 1.4;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* CTA Button */
+.btntwo {
+  margin-top: 25px;
+  padding: 12px 20px;
+  background: #F4AB7A;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Scrollbar */
+.popup-panel::-webkit-scrollbar {
+  width: 8px;
+}
+.popup-panel::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+
+/* Responsiveness */
+/* --------------------------------------
+   BASE STYLES (Desktop first)
+-------------------------------------- */
+
+/* Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  display: none;
+  z-index: 900;
+}
+
+/* Popup Panel */
+.popup-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  width: 860px;                /* Desktop size */
+  max-width: 95%;              /* Keeps it inside screen */
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #FFFFFF;
+  border-radius: 18px;
+  padding: 35px 45px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .35s ease;
+  z-index: 1000;
+}
+
+.popup-panel.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+}
+
+/* Close Button */
+.popup-panel .close-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: 300;
+  cursor: pointer;
+  color: #888;
+}
+
+/* Pill */
+.btnone {
+  background: #FFE9D0;
+  color: #A32A29;
+  padding: 8px 18px;
+  border-radius: 30px;
+  border: none;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* Titles */
+.popup-panel h3 {
+  font-size: 42px;
+  font-weight: 400;
+  margin: 15px 0 5px;
+}
+
+.popup-panel h6 {
+  font-size: 24px;
+  margin: 12px 0;
+  font-weight: 400;
+}
+
+/* Loan Items two-column layout */
+.inlinepop {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 25px 0;
+  border-bottom: 1px solid #E5E5E5;
+  position: relative;
+}
+
+.inlinepop > div {
+  width: 48%;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.inlinepop img {
+  width: 50px;
+}
+
+/* Vertical line between items */
+.inlinepop::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 50%;
+  width: 1px;
+  background: #E5E5E5;
+}
+
+.inlinepop:last-of-type {
+  border-bottom: none;
+}
+
+/* Additional text */
+.popup-panel p {
+  line-height: 1.4;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* CTA Button */
+.btntwo {
+  margin-top: 25px;
+  padding: 12px 20px;
+  background: #F4AB7A;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Scrollbar */
+.popup-panel::-webkit-scrollbar {
+  width: 8px;
+}
+.popup-panel::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+
+/* 
+   RESPONSIVE — TABLET
+   (1024px and below)
+ */
+@media (max-width: 1024px) {
+  .popup-panel {
+    width: 85%;
+    padding: 28px 32px;
+  }
+
+  .popup-panel h3 {
+    font-size: 34px;
+  }
+
+  .popup-panel h6 {
+    font-size: 20px;
+  }
+
+  .inlinepop {
+    gap: 28px;
+  }
+}
+
+
+/* 
+   RESPONSIVE — MOBILE
+   (768px and below)
+ */
+@media (max-width: 768px) {
+
+  .popup-panel {
+    width: 95%;
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .popup-panel h3 {
+    font-size: 26px;
+  }
+
+  .popup-panel h6 {
+    font-size: 18px;
+  }
+
+  /* Stack into 1 column */
+  .inlinepop {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .inlinepop > div {
+    width: 100%;
+  }
+
+  /* Remove vertical divider */
+  .inlinepop::after {
+    display: none;
+  }
+
+  /* Smaller icons */
+  .inlinepop img {
+    width: 38px;
+  }
+
+  .popup-panel p {
+    font-size: 14px;
+  }
+}
+
+
+/*
+   EXTRA SMALL DEVICES
+   (480px and below)
+ */
+@media (max-width: 480px) {
+
+  .popup-panel {
+    padding: 15px;
+  }
+
+  .popup-panel h3 {
+    font-size: 22px;
+  }
+
+  .popup-panel h6 {
+    font-size: 16px;
+  }
+
+  .btnone {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .btntwo {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .inlinepop img {
+    width: 32px;
+  }
 }
