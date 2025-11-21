@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -72,7 +73,7 @@
               <h3>Shaba</h3>
               <p>Ideal for women seeking small, short-term loans to
                  grow their businesses and build credit.</p>
-          <a class="small-btn openModal" href="#">Learn More</a>
+              <a class="small-btn openModal" href="#">Learn More</a>
             </div>
             <img src="Images/shaba.png" alt="Shaba" class="card-image" />
           </article>
@@ -182,7 +183,6 @@
   const openButtons = document.querySelectorAll(".openModal");
   const close = document.getElementById("closeModal");
 
-  // open modal from ANY button with class "openModal"
   openButtons.forEach(btn => {
     btn.onclick = (e) => {
       e.preventDefault();
@@ -190,14 +190,13 @@
     };
   });
 
-  // close button
   close.onclick = () => modal.classList.remove("show");
 
-  // close when clicking background
   modal.onclick = (e) => {
     if (e.target === modal) modal.classList.remove("show");
   };
 </script>
+
 
     </div>
     </div>
@@ -213,5 +212,3 @@
   </div>
 </body>
 </html>
-
-
