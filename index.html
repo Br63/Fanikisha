@@ -73,7 +73,8 @@
               <h3>Shaba</h3>
               <p>Ideal for women seeking small, short-term loans to
                  grow their businesses and build credit.</p>
-              <a class="small-btn openModal" href="#">Learn More</a>
+              <!-- <a class="small-btn openModal" data-id="0" href="#">Learn More</a> -->
+               <button class="openPopup" data-id="0">Learn More</button>
             </div>
             <img src="Images/shaba.png" alt="Shaba" class="card-image" />
           </article>
@@ -83,7 +84,8 @@
               <h3>Dhahabu</h3>
               <p>Aimed for entrepreneurs looking for larger 
                 working capital and savings support.</p>
-              <a class="small-btn openModal"  href="#">Learn More</a>
+              <!-- <a class="small-btn openModal"   data-id="1" href="#">Learn More</a> -->
+                <button class="openPopup" data-id="1">Learn More</button>
             </div>
             <img src="Images/dhahabu.png" alt="Dhahabu" class="card-image" />
           </article>
@@ -92,7 +94,8 @@
             <div class="card-content">
               <h3>Almasi</h3>
               <p>Structured loans and mentoring for established businesses seeking expansion.</p>
-              <a class="small-btn openModal" href="#">Learn More</a>
+              <!-- <a class="small-btn openModal"  data-id="2"  href="#">Learn More</a> -->
+              <button class="openPopup" data-id="2">Learn More</button>
             </div>
             <img src="Images/almasi.png" alt="Almasi" class="card-image" />
           </article>
@@ -102,13 +105,14 @@
   <div class="card-content">
     <h3>Platini</h3>
     <p>Premium package with tailored advisory and network introductions.</p>
-    <a class="small-btn openModal"  href="#">Learn More</a>
+    <!-- <a class="small-btn openModal" href="#">Learn More</a> -->
+    <button class="openPopup" data-id="3">Learn More</button>
   </div>
   <img src="Images/platini.png" alt="Platini" class="card-image" />
 </article>
 
 <!-- MODAL -->
-<div class="modal" id="dhahabuModal">
+<!-- <div class="modal" id="dhahabuModal">
   <div class="modal-box">
     
     <span class="modal-pill">For growing businesses (12–24 months, up to KShs 50M turnover)</span>
@@ -174,11 +178,11 @@
     <button class="close-btn" id="closeModal">Start My Fanikisha Journey</button>
 
   </div>
-</div>
+</div> -->
 
 
 <!-- javascript for the modal -->
-<script>
+<!-- <script>
   const modal = document.getElementById("dhahabuModal");
   const openButtons = document.querySelectorAll(".openModal");
   const close = document.getElementById("closeModal");
@@ -195,7 +199,7 @@
   modal.onclick = (e) => {
     if (e.target === modal) modal.classList.remove("show");
   };
-</script>
+</script> -->
 
 
     </div>
@@ -210,5 +214,228 @@
     </footer>
 
   </div>
+  <div id="popupOverlay" class="popup-overlay"></div>
+<div id="popupContainer"></div>
+<!-- Modal Popups -->
+<div id="popupOverlay" class="popup-overlay"></div>
+<div id="popupContainer"></div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const popupData = [
+    {
+      btnOne: "Ideal for women running a start-up business that has been in existence for less than 12 months.",
+      title: "Shaba Benefits",
+      subtitle: "Access tailored loans",
+      items: [
+        { icon: "assets/one.svg", text: "Business loans of up to KShs 10 million. With 100 cash guarantee provided by individuals, e.g., family, friends" },
+        { icon: "assets/two.svg", text: "Access up to 80 LPO financing to enable you grow your business" },
+        { icon: "assets/three.svg", text: "Instant mobile loans from as low as KShs 100 to KShs 3 million via your Equitel line, Equity Mobile App or *247*6#" },
+        
+      ],
+      additionalTitle: "Additional Benefits",
+      additional: [
+        "Health cover: Affordable health cover for you and your family from as low as KShs 5800 per year",
+        "Debit card services: Get the Equity card, Mastercard or Visa Classic card, accepted locally and internationally, enabling you to make payments for free",
+        "Credit card: Get an Equity American Express Green credit card or Visa Classic credit card with a credit with a limit of up to KShs 300,000",
+        "Mobile banking: 24 hour access to your account through Equitel line, *247# or Equity Mobile App",
+        "PayPal withdrawal services: Link your account with PayPal and withdraw PayPal funds into your Equity Account",
+        "Receive payments for FREE through One Equity Till Number. You can receive payments from mobile money wallets (M-PESA, Airtel), other banks, , Equitel line, or Equity Mobile App",
+        "Enroll for business or entrepreneurship training",
+        "Mentorship and networking opportunities with chances to learn from top performers in key sectors like agriculture, health, education, and more",
+        "Opportunity to graduate to the next level"
+      ],
+      btnTwo: "Start My Fanikisha Journey"
+    },
+    {
+      btnOne: "Ideal for women managing a business that has been in existence for over 12 months and has a turnover of up to KShs 50 million.",
+      title: "Dhahabu Benefits",
+      subtitle: "Access tailored loans",
+      items: [
+        { icon: "assets/one.svg", text: "Business loans of up to KShs 10 million based on cash flows" },
+        { icon: "assets/two.svg", text: "Access up to 80 LPO financing to enable you grow your business" },
+        { icon: "assets/three.svg", text: "Instant mobile loans from as low as KShs 100 to KShs 3 million via your Equitel line, Equity Mobile App or *247*6#" },
+        { icon: "assets/four.svg", text: "Unsecured ecosystem working  capital solutions of up to KShs 10 million" }
+      ],
+      additionalTitle: "Additional Benefits",
+      additional: [
+        "Health cover: Affordable health cover for you and your family from as low as KShs 5800 per year",
+        "Premium card services: Get the Mastercard Platinum, or Visa Gold card and enjoy travel and shopping benefits",
+        "Credit card: Get an Equity American Express Express credit card or Visa Gold credit card with a credit with a limit of up to KShs 1 million",
+        "Mobile banking: 24 hour access to your account through Equitel line, *247# or Equity Mobile App",
+        "PayPal withdrawal services: Link your account with PayPal and withdraw PayPal funds into your Equity Account",
+        "Receive payments for FREE through One Equity Till Number. You can receive payments from mobile money wallets (M-PESA, Airtel), other banks, , Equitel line, or Equity Mobile App",
+        "Enroll for business or entrepreneurship training",
+        "Mentorship and networking opportunities with chances to learn from top performers in key sectors like agriculture, health, education, and more",
+        "Opportunity to graduate to the next level"
+      ],
+      btnTwo: "Start My Fanikisha Journey"
+    },
+    {
+      btnOne: "Ideal for women managing a business that has been in existence for more than 24 months with a turnover of KShs 51 million to KShs 800 million per annum.",
+      title: "Almasi Benefits",
+      subtitle: "Access tailored loans",
+      items: [
+        { icon: "assets/one.svg", text: "Get an unsecured business loan of up to Kshs 10 Million based on cash flows" },
+        { icon: "assets/two.svg", text: "Unsecured ecosystem working capital solutions of up to KShs 250 million" },
+        { icon: "assets/three.svg", text: "Get instant mobile loans up to KShs 3 million via your Equitel line or Equity Mobile App" },
+        { icon: "assets/four.svg", text: "Financing your suppliers and distributors" }
+      ],
+      additionalTitle: "Additional Benefits",
+      additional: [
+        "Get unsecured bid bonds of up to KShs 10 million processed within 1 hour",
+        "Health cover: Tailored health cover for you and your family",
+        "Premium card services: Get the Mastercard World, or Visa Signature card and enjoy airport lounge access, travel and shopping benefits",
+        "Credit card: Get an Equity American Express Express Gold card with a credit with a limit of up to KShs 3 million",
+        "Mobile banking: 24 hour access to your account through Equitel line, *247# or Equity Mobile App",
+        "PayPal withdrawal services: Link your account with PayPal and withdraw PayPal funds into your Equity Account",
+        "Receive payments for FREE through One Equity Till Number. You can receive payments from mobile money wallets (M-PESA, Airtel), other banks, , Equitel line, or Equity Mobile App",
+        "Enroll for business or entrepreneurship training",
+        "Mentorship and networking opportunities with chances to learn from top performers in key sectors like agriculture, health, education, and more",
+        "Opportunity to graduate to the next level"
+      ],
+      btnTwo: "Start My Fanikisha Journey"
+    },
+    {
+      btnOne: "Ideal for women managing a business that has been in existence  for more than 24 months with a turnover of over KShs 800 million.",
+      title: "Platini Benefits",
+      subtitle: "Access tailored loans",
+      items: [
+        { icon: "assets/one.svg", text: "Unsecured loan limit depending on working capital requirements" },
+        { icon: "assets/two.svg", text: "Unsecured ecosystem working capital solutions of up to KShs 250 million" },
+        { icon: "assets/three.svg", text: "Get instant mobile loans up to KShs 3 million via your Equitel line or Equity Mobile App" },
+        { icon: "assets/four.svg", text: "Financing for your suppliers, distributors or retail partners" }
+      ],
+      additionalTitle: "Additional Benefits",
+      additional: [
+        "Get unsecured bid bonds of up to KShs 10 million processed within 1 hour",
+        "Health cover: Tailored for you and your family",
+        "Premium card services: Get the Mastercard World Elite, or Visa Infinite card and enjoy airport lounge access, travel and shopping benefits",
+        "Credit card: Get an Equity American Express Express Gold card with a credit with a limit of up to KShs 3 million",
+        "Mobile banking: 24 hour access to your account through Equitel line, *247# or Equity Mobile App",
+        "PayPal withdrawal services: Link your account with PayPal and withdraw PayPal funds into your Equity Account",
+        "Receive payments for FREE through One Equity Till Number. You can receive payments from mobile money wallets (M-PESA, Airtel), other banks, , Equitel line, or Equity Mobile App",
+        "Enroll for business or entrepreneurship training",
+        "Mentorship and networking opportunities with chances to learn from top performers in key sectors like agriculture, health, education, and more",
+        "Opportunity to graduate to the next level"
+      ],
+      btnTwo: "Start My Fanikisha Journey"
+    }
+  ];
+
+  function createPopupHTML(data, index) {
+    return `
+      <div class="popup-panel" id="popupPanel${index}" role="dialog" aria-hidden="true">
+        <span class="close-btn" data-close="${index}" aria-label="Close">&times;</span>
+
+        <button class="btnone" type="button">${escapeHtml(data.btnOne)}</button>
+        
+        <h3>${escapeHtml(data.title)}</h3>
+        <h6>${escapeHtml(data.subtitle)}</h6>
+
+        <div>
+          <div class="inlinepop">
+            ${data.items.slice(0,2).map(item => `
+              <div>
+                <img src="${escapeAttr(item.icon)}" alt="">
+                <p>${escapeHtml(item.text)}</p>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="another"></div>
+
+          <div class="inlinepop">
+            ${data.items.slice(2,4).map(item => `
+              <div>
+                <img src="${escapeAttr(item.icon)}" alt="">
+                <p>${escapeHtml(item.text)}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div>
+          <h6>${escapeHtml(data.additionalTitle)}</h6>
+          <div>
+            ${data.additional.map(txt => `<p>${escapeHtml(txt)}</p>`).join('')}
+          </div>
+
+          <button class="btntwo" type="button">${escapeHtml(data.btnTwo)}</button>
+        </div>
+      </div>
+    `;
+  }
+
+  // Small helpers to avoid injection when inserting text
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+  function escapeAttr(str){ return escapeHtml(str); }
+
+  // --- 3) Render popups into container ---
+  const container = document.getElementById('popupContainer');
+  if (!container) {
+    console.error('popupContainer element not found! Add <div id="popupContainer"></div> to your HTML.');
+    return;
+  }
+  popupData.forEach((item, idx) => {
+    container.insertAdjacentHTML('beforeend', createPopupHTML(item, idx));
+  });
+
+  // --- 4) Attach open/close handlers AFTER popups exist ---
+  const overlay = document.getElementById('popupOverlay');
+
+  // open buttons (these may be your existing .openPopup buttons in the page)
+  document.querySelectorAll('.openPopup').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-id');
+      const panel = document.getElementById(`popupPanel${id}`);
+      if (!panel) { console.warn('Panel not found for id', id); return; }
+      panel.classList.add('open');
+      panel.setAttribute('aria-hidden','false');
+      overlay.classList.add('show');
+    });
+  });
+
+  // close via X button or overlay
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('close-btn')) {
+      const id = e.target.getAttribute('data-close');
+      closePopup(id);
+    }
+    if (e.target === overlay) {
+      closeAllPopups();
+    }
+  });
+
+  // ESC key closes
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllPopups();
+  });
+
+  function closePopup(id) {
+    const panel = document.getElementById(`popupPanel${id}`);
+    if (panel) {
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden','true');
+    }
+    overlay.classList.remove('show');
+  }
+
+  function closeAllPopups() {
+    document.querySelectorAll('.popup-panel.open').forEach(p => {
+      p.classList.remove('open');
+      p.setAttribute('aria-hidden','true');
+    });
+    overlay.classList.remove('show');
+  }
+
+});
+</script>
 </body>
 </html>
