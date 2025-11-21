@@ -456,7 +456,7 @@ height: 365px;
 }
 
 /* Slide in */
-.modal.show .modal-box {
+/* .modal.show .modal-box {
   transform: translateX(0);
 }
 
@@ -531,15 +531,15 @@ height: 365px;
      margin-bottom: 10px; 
       font-weight: 400;
   font-size: 16px;
-    }
+    } 
 
-/* vertical lines */
+
 .loan-item:nth-child(1),
 .loan-item:nth-child(3) {
   border-right: 1px solid #e5e5e5;
 }
 
-/* horizontal lines */
+
 .loan-item:nth-child(1),
 .loan-item:nth-child(2) {
   border-bottom: 1px solid #e5e5e5;
@@ -555,7 +555,7 @@ height: 365px;
     border-radius: 8px;
     cursor: pointer;
   }
-
+*/
 
 /* desktop */
 
@@ -725,47 +725,121 @@ height: 365px;
   }
 }
 
-
-
+/* ===== Overlay ===== */
 .popup-overlay {
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.3s;
-  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  display: none;
+  z-index: 900;
 }
 
-.popup-overlay.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
+/* ===== Popup Panel ===== */
 .popup-panel {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 90%;
-  max-width: 600px;
+  transform: translate(-50%, -60%);
+  width: 860px;
   max-height: 90vh;
   overflow-y: auto;
-  transform: translate(-50%, -50%) scale(0.7);
-  opacity: 0;
   background: #fff;
-  border-radius: 16px;
-  padding: 20px;
+  border-radius: 18px;
+  padding: 35px 45px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .35s ease;
   z-index: 1000;
-  transition: 0.3s;
 }
 
+/* When open */
 .popup-panel.open {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
 }
 
-.close-btn {
-  font-size: 32px;
+/* ===== Close Button (X) ===== */
+.popup-panel .close-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: 300;
   cursor: pointer;
-  float: right;
+  color: #888;
+}
+
+/* ===== Badge/Pill ===== */
+.btnone {
+  background: #FFE9D0;
+  color: #A32A29;
+  padding: 8px 18px;
+  border-radius: 30px;
+  border: none;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* ===== Titles ===== */
+.popup-panel h3 {
+  font-size: 42px;
+  font-weight: 400;
+  margin: 15px 0 5px;
+}
+
+.popup-panel h6 {
+  font-size: 24px;
+  margin: 12px 0;
+  font-weight: 400;
+}
+
+/* ===== Loan Items Grid ===== */
+.inlinepop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px 40px;
+  margin-bottom: 25px;
+}
+
+.inlinepop div {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.inlinepop img {
+  width: 50px;
+}
+
+/* ===== Additional Benefits ===== */
+.popup-panel p {
+  line-height: 1.4;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.btntwo {
+  margin-top: 25px;
+  padding: 12px 20px;
+  background: #F4AB7A;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* ===== Scrollbar inside popup ===== */
+.popup-panel::-webkit-scrollbar {
+  width: 8px;
+}
+.popup-panel::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
 }
